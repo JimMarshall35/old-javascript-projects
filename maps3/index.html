@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqgnN-VqYRdG3O2TNqPQFLJtVsjoSNS_A&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      #map {
+        height: 400px;
+        width: 50%;
+      }
+      #canvas{
+        border-style: solid;
+      }
+      h2, h3{
+        font-family: 'Bebas Neue', cursive;
+      }
+      .my-num-input{
+        font-size: 30pt;
+        height: 30pt;
+        width: 5em;
+      }
+      label{
+        font-size: 30pt;
+        font-family: 'Bebas Neue', cursive;
+        margin-right: 1em;
+        margin-left: 1em;
+
+      }
+      #c{
+        width: auto;
+        height: auto;
+        display: block;
+        margin-right: 5%;
+
+      }
+      .knob{
+        background-color: transparent;
+        height: auto;
+        width: auto;
+      }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/adsrnode.js"></script>
+    <script type="text/javascript" src="js/qwerty-hancock.min.js"></script>
+    <script type="text/javascript" src="js/keyboard.js"></script>
+    <script type="text/javascript" src="js/audio.js"></script>
+    <script type="text/javascript" src="js/oscilloscope.js"></script>
+    <script type="text/javascript" src="js/fft.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+    <div style="display: flex; flex-direction: row; align-items: center;">
+      <h2 id="distance-info">Distance:<br>Distance between samples:<br>Resolution: </h2>
+      <label for="samples-inpt">Samples</label>
+      <input id="samples-inpt" class="my-num-input" type="number" name="samples" onchange="onNumSamplesChange(event)" value="100">
+    </div>
+    
+    <div style="display: flex; flex-direction: row;">
+      <div id="map"></div>
+      <canvas id="canvas"></canvas>
+    </div>
+    <div style="display: flex; flex-direction: row; height: auto; width: auto; align-items: center; justify-content: center;">     
+      
+      <canvas id="c"></canvas>
+      <div style="display: flex; flex-direction: column;">
+        <h3>Attack</h3>
+        <div class="knob" id="slider-a"></div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <h3>Decay</h3>
+        <div class="knob" id="slider-d"></div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <h3>Sustain</h3>
+        <div class="knob" id="slider-s"></div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <h3>Release</h3>
+        <div class="knob" id="slider-r"></div>
+      </div>
+    </div>
+    <div id="keyboard"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
+  </body>
+</html>

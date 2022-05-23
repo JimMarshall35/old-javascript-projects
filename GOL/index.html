@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>conway's game of life</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="menubar">
+		<header>menu</header>
+		<div id="buttons" class="dropdowndiv">
+			<button id="pause" onclick="togglePause(this)">Play</button>
+			<button id="clear" onclick="board.clearBoard()">Clear</button>
+		</div>
+		
+		<div id="speedslider" class="dropdowndiv">
+			<h1 id="speedlabel">speed: 1000</h1>
+			<input id="speed" type="range" min="0" max="2000" value="0" class="slider" oninput="handleSpeedSliderChange(this)" >
+		</div>
+		<div id="patternselectdiv" class="dropdowndiv">
+			<select onchange="handlePatternSelectChange(this)" id="patternselect"></select>
+			<button onclick="handlePatternLoadButton()" style="width: auto; height: auto; padding:0px 0px;">Load</button>
+		</div>
+		<div id="urlselectdiv" class="dropdowndiv">
+			<h1>URL</h1>
+			<input id="URLInput" type="text" name="URL" style="height: 1em; margin-top: auto; margin-bottom: auto; margin-right: 5%">
+			<button onclick="handleURLLoadButton()" style="width: auto; height: auto; padding:0px 0px;">Load URL</button>
+		</div>
+		
+	</div>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
